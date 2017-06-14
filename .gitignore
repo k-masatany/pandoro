@@ -1,0 +1,7 @@
+*~
+*DS_Store
+/vendor/*
+/tmp/*
+/logs/*
+/config/Migrations/schema-dump-default.lock
+/server/ansible/site.retry
