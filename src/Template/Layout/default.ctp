@@ -27,10 +27,10 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
     <?= $this->Html->meta('icon') ?>
 
     <?= $this->Html->css('base.css') ?>
-    <?= $this->Html->css('vendor/semantic.css') ?>
+    <?= $this->Html->css('vendor/materialize/css/materialize.css') ?>
 
     <?= $this->Html->script('vendor/jquery.js') ?>
-    <?= $this->Html->script('vendor/semantic.js') ?>
+    <?= $this->Html->script('vendor/materialize.js') ?>
     <?= $this->Html->script('base.js') ?>
 
     <?= $this->fetch('meta') ?>
