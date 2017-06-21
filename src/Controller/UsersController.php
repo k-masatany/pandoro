@@ -19,7 +19,6 @@ class UsersController extends AppController
      */
     public function index()
     {
-        $this->Flash->default('メッセージ');
         $users = $this->paginate($this->Users);
 
         $this->set(compact('users'));
