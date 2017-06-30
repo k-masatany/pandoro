@@ -26,19 +26,24 @@ class UsersController extends AppController
     }
 
     /**
-     * View method
+     * Login method
      *
-     * @param string|null $id User id.
-     * @return \Cake\Http\Response|null
-     * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
+     * @author masatani
      */
-    public function view($id = null)
+    public function login()
     {
-        $user = $this->Users->get($id, [
-            'contain' => []
-        ]);
+        $user = $this->Users->newEntity();
 
-        $this->set('user', $user);
+        if ($this->request->is('post')) {
+            $user = $this->Auth->identify();
+            if ($user) {
+                $this->Auth->setUser($user);
+                return $this->redirect($this->Auth->redirectUrl());
+            }
+            $this->Flash->error('ログインできませんでした');
+        }
+
+        $this->set(compact('user'));
         $this->set('_serialize', ['user']);
     }
 

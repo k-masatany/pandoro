@@ -5,6 +5,7 @@ use Cake\ORM\Query;
 use Cake\ORM\RulesChecker;
 use Cake\ORM\Table;
 use Cake\Validation\Validator;
+use Cake\Database\Schema\TableSchema;
 
 /**
  * Users Model
@@ -21,6 +22,17 @@ use Cake\Validation\Validator;
  */
 class UsersTable extends Table
 {
+
+    /**
+     * passwordカラムのTypeをPasswordTypeに変更
+     *
+     * @author masatani
+     */
+    protected function _initializeSchema(TableSchema $schema)
+    {
+        $schema->columnType('password', 'password');
+        return $schema;
+    }
 
     /**
      * Initialize method

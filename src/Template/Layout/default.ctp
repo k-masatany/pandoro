@@ -20,15 +20,12 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
 <head>
     <?= $this->Html->charset() ?>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>
-        <?= $cakeDescription ?>:
-        <?= $this->fetch('title') ?>
-    </title>
+    <title>Pandoro</title>
     <?= $this->Html->meta('icon') ?>
 
-    <?= $this->Html->css('base.css') ?>
     <?= $this->Html->css('vendor/materialize/css/materialize.css') ?>
     <?= $this->Html->css('vendor/font-awesome/css/font-awesome.css') ?>
+    <?= $this->Html->css('base.css') ?>
 
     <?= $this->Html->script('vendor/jquery.js') ?>
     <?= $this->Html->script('vendor/materialize.js') ?>
@@ -39,18 +36,9 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
     <?= $this->fetch('script') ?>
 </head>
 <body>
-  <div class="row">
-    <div class="col s3">
-      <h1><a href="">Pandoro</a></h1>
-    </div>
-    <div class="col s9">
-      <div class="container">
-          <?= $this->fetch('content') ?>
-      </div>
-      <div class="modal bottom-sheet transparent">
-        <?= $this->Flash->render() ?>
-      </div>
-    </div>
+  <?= $this->fetch('content') ?>
+  <div class="modal bottom-sheet transparent">
+    <?= $this->Flash->render() ?>
   </div>
   <footer>
   </footer>

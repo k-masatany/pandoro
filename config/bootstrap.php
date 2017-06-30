@@ -220,3 +220,6 @@ Type::build('timestamp')
 if (Configure::read('debug')) {
     Plugin::load('DebugKit', ['bootstrap' => true]);
 }
+
+// Type宣言
+Type::map('password', 'App\Database\Type\PasswordType');
