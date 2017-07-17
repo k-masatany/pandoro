@@ -35,3 +35,10 @@ input[type=password].input-field:focus {
 .btn-flat.border-white {
     border: 1px solid #FFFFFF;
 }
+
+/*checkbox color*/
+.checkbox-yellow[type="checkbox"].filled-in:checked + label:after{
+    border: 2px solid #616161;
+    background-color: #EF6C00;
+    /*background-color: #F9A825;*/
+}
