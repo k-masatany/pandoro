@@ -5,3 +5,4 @@
 /logs/*
 /config/Migrations/schema-dump-default.lock
 /server/ansible/site.retry
+config/app.php
