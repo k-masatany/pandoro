@@ -28,10 +28,14 @@ class UsersController extends AppController
     /**
      * Login method
      *
-     * @author masatani
+     * @author k-masatany
      */
     public function login()
     {
+        if (!empty($this->Auth->user())) {
+            return $this->redirect($this->Auth->redirectUrl());
+        }
+
         $user = $this->Users->newEntity();
 
         if ($this->request->is('post')) {
@@ -45,6 +49,18 @@ class UsersController extends AppController
 
         $this->set(compact('user'));
         $this->set('_serialize', ['user']);
+    }
+
+    /**
+     * Logout method
+     *
+     * @author k-masatany
+     */
+    public function logout()
+    {
+        $this->request->session()->destroy();
+        $this->Flash->success('ログアウトしました');
+        return $this->redirect($this->Auth->logout());
     }
 
     /**
